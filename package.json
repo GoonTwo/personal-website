@@ -5,7 +5,8 @@
   "author": "GoonTwo <dannywelstad@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "start": "webpack-dev-server"
   },
   "dependencies": {
     "react": "^16.4.1",
@@ -19,9 +20,15 @@
     "@babel/preset-react": "^7.0.0-beta.51",
     "@babel/preset-stage-3": "^7.0.0-beta.51",
     "babel-loader": "^8.0.0-beta",
+    "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
-    "style-loader": "^0.21.0"
-  }
+    "react-hot-loader": "^4.3.3",
+    "style-loader": "^0.21.0",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "sideEffects": [
+    "*.css"
+  ]
 }
