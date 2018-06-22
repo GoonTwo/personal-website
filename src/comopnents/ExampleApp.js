@@ -8,7 +8,7 @@ class ExampleApp extends React.Component {
     return (
       <>
         <img src={fb} />
-        <div className="title">This is an ExampleApp</div>
+        <div className={styles.title}>This is an ExampleApp</div>
         <button
           onClick={() => {
             throw new Error()
