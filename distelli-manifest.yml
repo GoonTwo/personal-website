@@ -17,6 +17,7 @@ dwelstad16/personal-website:
     - echo "PreInstall Starting."
   PostInstall:
     - echo "PostInstall Starting."
+    - yarn install
     - yarn run build
   Env:
     - PORT: 8080
