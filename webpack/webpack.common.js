@@ -6,17 +6,22 @@ const webpack = require('webpack')
 //   "sideEffects": ["*.css"] will tell webpack to treeshake when mode = production
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.tsx',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, '../dist')
   },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js'],
+    modules: [path.resolve(__dirname, '../src'), 'node_modules']
+  },
+
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader'
+        use: ['babel-loader', 'ts-loader']
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -25,7 +30,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(['dist'], { root: path.join(__dirname, '..') }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../src/index.html')
     }),
