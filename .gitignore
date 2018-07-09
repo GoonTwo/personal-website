@@ -1,6 +1,9 @@
 # Node Muodules
 node_modules/
 
+# Webpack Output
+dist/
+
 # VS Code Setting
 .vscode
 

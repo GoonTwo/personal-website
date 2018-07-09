@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --config ./webpack/webpack.prod.js",
-    "start": "yarn run build && ts-node ./server/index.ts",
+    "_server": "ts-node ./server/index.ts",
+    "start": "yarn run build && yarn run _server",
     "dev": "webpack-dev-server --config ./webpack/webpack.dev.js"
   },
   "dependencies": {
